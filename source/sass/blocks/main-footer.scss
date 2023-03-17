@@ -1,0 +1,121 @@
+.main-footer {
+  background-color: var(--black2);
+}
+
+.main-footer__wrapper {
+  @include content;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--default-white);
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 30px;
+
+  @include desktop-w () {
+    flex-direction: row;
+    padding-top: 67px;
+    padding-bottom: 67px;
+    column-gap: 118px;
+  }
+}
+
+.main-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include desktop-w () {
+    padding-left: 88px;
+    align-items: flex-start;
+  }
+}
+
+.main-footer__logo {
+  margin-bottom: 20px;
+
+  @include desktop-w () {
+    margin-bottom: 23px;
+  }
+}
+
+.main-footer__logo-link {
+  font-family:  var(--playfair-font);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 107px;
+  min-height: 26px;
+
+  @include tablet-w () {
+    margin-top: 1px;
+  }
+
+  @include desktop-w () {
+  }
+}
+
+.main-footer__logo-wrapper {
+  align-self: center;
+  width: 25px;
+  height: 25px;
+}
+
+.main-footer__phone-wrapper {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.75);
+
+  @include desktop-w () {
+    margin-bottom: 15px;
+  }
+}
+
+.main-footer__news-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.main-footer__list-navigation {
+  @include listres;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: space-between;
+
+  @include tablet-w () {
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+
+  @include desktop-w () {
+    margin-top: 12px;
+    column-gap: 118px;
+  }
+}
+
+.main-footer__item-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase
+}
+
+.main-footer__item {
+  display: flex;
+  flex-direction: column;
+  max-width: 180px;
+  row-gap: 15px;
+}
+
+.main-footer__item-link {
+  color: rgba(255,255,255,.75);
+  font-size: 12px;
+  line-height: 14px;
+}
