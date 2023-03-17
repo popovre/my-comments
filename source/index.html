@@ -2,282 +2,43 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Conquest.ru</title>
+    <title>comments-field</title>
     <link rel="stylesheet" href="css/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header class="main-header">
-      <div class="main-header__wrapper">
-        <a class="main-header__logo-link" href="#">
-          <div class="main-header__logo-wrapper">
-            <img class="main-header__logo" src="img/mobile/logo-dark.svg" width="20" height="20" alt="Логотип магазина Conquest">
-          </div>
-          <p class="main-header__logo-text">conquest</p>
-        </a>
-        <nav class="main-header__nav main-nav">
-          <ul class="main-header__nav-list main-nav__list">
-            <li class="main-header__nav-item main-nav__list-item">
-              <a class="main-header__nav-link" href="#">
-                <span>Каталог</span>
-              </a>
-            </li>
-            <li class="main-header__nav-item main-nav__list-item">
-              <a class="main-header__nav-link" href="#">
-                <span>Акции</span>
-              </a>
-            </li>
-            <li class="main-header__nav-item main-nav__list-item">
-              <a class="main-header__nav-link" href="#">
-                <span>Доставка</span>
-              </a>
-            </li>
-            <li class="main-header__nav-item main-nav__list-item">
-              <a class="main-header__nav-link" href="#">
-                <span>Контакты</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="main-header__utils main-utils">
-          <ul class="main-header__utils-list main-utils__list">
-            <li class="main-header__utils-item main-utils__item">
-              <a class="main-header__utils-link utils__link" href="#">
-                <span class="visually-hidden">Поиск</span>
-                <div class="main-header__utils-icon">
-                  <svg class="utils__search-svg" width="16" height="16">
-                    <use xlink:href="img/icons/sprite.svg#search-icon"></use>
-                  </svg>
-                  <div class="main-header__utils-round visually-hidden">
-                    <span class="main-header__utils-amount">1</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="main-header__utils-item main-utils__item">
-              <a class="main-header__utils-link utils__link" href="#">
-                <span class="visually-hidden">Избранное</span>
-                <div class="main-header__utils-icon">
-                  <svg class="utils__likes-svg" width="21" height="18">
-                    <use xlink:href="img/icons/sprite.svg#likes-icon"></use>
-                  </svg>
-                  <div class="main-header__utils-round">
-                    <span class="main-header__utils-amount">1</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="main-header__utils-item main-utils__item">
-              <a class="main-header__utils-link utils__link" href="#">
-                <span class="visually-hidden">Корзина</span>
-                <div class="main-header__utils-icon">
-                  <svg class="utils__basket-svg" width="18" height="16">
-                    <use xlink:href="img/icons/sprite.svg#basket-icon"></use>
-                  </svg>
-                  <div class="main-header__utils-round visually-hidden">
-                    <span class="main-header__utils-amount">1</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
     <main class="main-container">
-      <section class="preview">
-        <div class="preview__wrapper">
-          <div class="preview__description">
-            <h1 class="preview__title">Весна/Лето 2019</h1>
-            <h2 class="preview__subtitle">Коллекция</h2>
-            <h3 class="preview__description-slogan">Швейцарские часы в наличии в Москве и c доставкой по всему миру</h3>
-            <a class="preview__link catalog-link">
-              <span>Смотреть каталог</span>
-            </a>
-          </div>
-          <div class="preview__card">
-            <div class="preview__card-price">
-              <span class="preview__card-number">22 000</span>
-              <div class="preview__card-price-wrapper">
-                <svg class="preview__card-price-svg" width="10" height="13" fill="currentColor">
-                  <use xlink:href="img/icons/sprite.svg#ruble-preview-icon"></use>
-                </svg>
+      <section class="modal-container">
+        <div class="modal">
+          <h3 class="modal-name">
+            Поле ввода комментариев
+          </h3>
+          <form class="modal-form" action="https://echo.htmlacademy.ru/" method="get">
+            <div class="modal-structure modal-structure-income">
+              <label class="modal-label modal-label-text" for="modal-income">
+                Дата заезда:
+              </label>
+              <div class="modal-valid-wrapper modal-invalid-wrapper">
+                <div class="modal-input-wrapper">
+                  <input class="modal-input-date" id="modal-income" type="text" name="date-income" value="27 апреля 2020" placeholder="Укажите дату" required>
+                  <button class="modal-button-date modal-button-date-income" type="button">
+                    <span class="visually-hidden">Выбрать дату заезда.</span>
+                  </button>
+                </div>
+                <span class="modal-input-error">Мы не можем отправить вас в прошлое.</span>
               </div>
             </div>
-            <p class="preview__card-parameters">
-              <span class="preview__card-parameter">28 мм диаметр</span>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="popular">
-        <div class="popular__header">
-          <h2 class="popular__title">Популярные модели</h2>
-          <button class="popular__show-all">Смотреть все</button>
-        </div>
-        <ul class="popular__cards-list cards-list">
-          <li class="popular__cards-item cards-list__item cards-list__item--rado">
-            <h2 class="popular__cards-title cards-list__title">rado</h2>
-            <div class="popular__cards-price cards-list__price">
-              <span class="cards-list__price-value">65 300</span>
-              <span class="popular__cards-price-currency">₽</span>
-            </div>
-            <div class="popular__cards-image cards-list__image-wrapper">
-              <img class="popular__cards-image-pic cards-list__image" src="img/mobile/popular-rado.webp" alt="RADO" width="313" height="313">
-            </div>
-            <button class="popular__cards-list-button cards-list__button">Подробнее</button>
-          </li>
-          <li class="popular__cards-item cards-list__item cards-list__item--bvlgari">
-            <h2 class="popular__cards-title cards-list__title">bvlgari</h2>
-            <div class="popular__cards-price cards-list__price">
-              <span class="cards-list__price-value">81 700</span>
-              <span class="popular__cards-price-currency">₽</span>
-            </div>
-            <div class="popular__cards-image cards-list__image-wrapper">
-              <img class="popular__cards-image-pic cards-list__image" src="img/mobile/popular-bvlgari.webp" alt="BVLGARI" width="313" height="313">
-            </div>
-            <button class="popular__cards-list-button cards-list__button">Подробнее</button>
-          </li>
-          <li class="popular__cards-item cards-list__item cards-list__item--dark-bvlgari">
-            <h2 class="popular__cards-title cards-list__title">bvlgari</h2>
-            <div class="popular__cards-price cards-list__price">
-              <span class="cards-list__price-value">72 700</span>
-              <span class="popular__cards-price-currency">₽</span>
-            </div>
-            <div class="popular__cards-image cards-list__image-wrapper">
-              <img class="popular__cards-image-pic cards-list__image" src="img/mobile/popular-dark-bvlgari.webp" alt="BVLGARI" width="313" height="313">
-            </div>
-            <button class="popular__cards-list-button cards-list__button">Подробнее</button>
-          </li>
-        </ul>
-      </section>
-      <section class="banner">
-        <div class="banner__wrapper">
-          <ul class="banner__list banner-list">
-            <li class="banner__list-item banner-list__item">
-              <div class="banner__list-image-wrapper">
-                <img class="banner__list-image banner-list__image" src="img/mobile/banner-image-first.webp" alt="циферблат" width="521" height="414">
-              </div>
-              <div class="banner__list-description">
-                <h2 class="banner__list-title">Подлинное качество</h2>
-                <p class="banner__list-information">Все часы производятся в Швейцарии и имеют сертификаты качества. Настоящие швейцарские часы — это предмет гордости и престижа.</p>
-                <a class="banner__list-link catalog-link">
-                  <span>смотреть каталог</span>
-                </a>
-              </div>
-            </li>
-          </ul>
-          <div class="banner__slider">
-            <button class="banner__slider-button"></button>
-            <span class="banner__slider-number">01</span>
-            <button class="banner__slider-button banner__slider-button--right"></button>
-          </div>
-        </div>
-      </section>
-      <section class="news">
-        <div class="news__wrapper">
-          <div class="news__subscribe">
-            <h2 class="news__title">
-              Следите за нашими новостями
-            </h2>
-            <p class="news__call">
-              Подписывайтесь на <b>@conquest_watch</b> в соцсетях и узнавайте о новинках и акциях первыми.
-            </p>
-            <ul class="news__socials socials">
-              <li class="socials__item socials__item--instagram">
-                <a class="news__socials-link socials__link" href="#">
-                  <span class="visually-hidden">ссылка на instagram аккаунт</span>
-                  <div class="news__socials-icon socials__icon-wrapper">
-                    <svg class="socials__instagram-svg" width="23" height="23">
-                      <use xlink:href="img/icons/sprite.svg#news-instagram-icon"></use>
-                    </svg>
-                  </div>
-                </a>
-              </li>
-              <li class="socials__item socials__item--facebook">
-                <a class="news__socials-link socials__link" href="#">
-                  <span class="visually-hidden">ссылка на facebook аккаунт</span>
-                  <div class="news__socials-icon socials__icon-wrapper">
-                    <svg class="socials__facebook-svg" width="12" height="21">
-                      <use xlink:href="img/icons/sprite.svg#news-facebook-icon"></use>
-                    </svg>
-                  </div>
-                </a>
-              </li>
-              <li class="socials__item socials__item--twitter">
-                <a class="news__socials-link socials__link" href="#">
-                  <span class="visually-hidden">ссылка на twitter аккаунт</span>
-                  <div class="news__socials-icon socials__icon-wrapper">
-                    <svg class="socials__twitter-svg" width="22" height="17">
-                      <use xlink:href="img/icons/sprite.svg#news-twitter-icon"></use>
-                    </svg>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <ul class="news__images-list">
-            <li class="news__images-item--small">
-              <div class="news__images-wrapper news__images-small-wrapper">
-                <img class="news__image news__image-small" src="img/mobile/news-image-small1.webp" alt="watches-decorative-picture" width="242" height="222">
-              </div>
-              <div class="news__images-wrapper news__images-small-wrapper">
-                <img class="news__image news__image-small" src="img/mobile/news-image-small2.webp" alt="watches-decorative-picture" width="242" height="222">
-              </div>
-            </li>
-            <li class="news__images-item--big">
-              <div class="news__images-wrapper news__images-big-wrapper">
-                <img class="news__image news__image-big" src="img/mobile/news-image-big.webp" alt="watches-decorative-picture" width="377" height="460">
-              </div>
-            </li>
-          </ul>
+            <button class="modal-close-button" type="button">
+              <span class="visually-hidden">Закрыть.</span>
+            </button>
+            <button class="modal-button-search" type="submit">
+              <span class="modal-button-search-text">
+                Найти
+              </span>
+            </button>
+          </form>
         </div>
       </section>
     </main>
-    <footer class="main-footer">
-      <div class="main-footer__wrapper">
-        <div class="main-footer__contacts">
-          <div class="main-footer__logo">
-            <a class="main-footer__logo-link" href="#">
-              <div class="main-footer__logo-wrapper">
-                <img class="main-footer__logo" src="img/mobile/logo-white.svg" width="25" height="25" alt="Логотип магазина Conquest">
-              </div>
-              <p>conquest</p>
-            </a>
-          </div>
-          <div class="main-footer__phone-wrapper">
-            <span class="main-footer__phone">
-              <a class="main-footer__phone-link" href="tel:84994504797">
-                8 (499) 450-47-97
-              </a>
-            </span>
-          </div>
-          <a class="main-footer__news-link" href="info@conquest.watch.ru">info@conquest.watch.ru</a>
-        </div>
-        <ul class="main-footer__list-navigation website-navigation">
-          <li class="main-footer__item website-navigation__item website-navigation__item--about">
-            <h2 class="main-footer__item-title website-navigation__title">о компании</h2>
-            <a class="main-footer__item-link" href="#">Наши магазины</a>
-            <a class="main-footer__item-link" href="#">Вакансии</a>
-            <a class="main-footer__item-link" href="#">Сертификаты</a>
-            <a class="main-footer__item-link" href="#">Отзывы</a>
-          </li>
-          <li class="main-footer__item website-navigation__item website-navigation__item--customer">
-            <h2 class="main-footer__item-title website-navigation__title">покупателям</h2>
-            <a class="main-footer__item-link" href="#">Каталог товаров</a>
-            <a class="main-footer__item-link" href="#">Как заказать?</a>
-            <a class="main-footer__item-link" href="#">FAQ</a>
-            <a class="main-footer__item-link" href="#">Корпоративным клиентам</a>
-          </li>
-          <li class="main-footer__item website-navigation__item website-navigation__item--payment">
-            <h2 class="main-footer__item-title website-navigation__title">оплата и доставка</h2>
-            <a class="main-footer__item-link" href="#">Способы оплаты</a>
-            <a class="main-footer__item-link" href="#">Время доставки</a>
-            <a class="main-footer__item-link" href="#">Гарантии и ремонт</a>
-            <a class="main-footer__item-link" href="#">Возврат и компенсация</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
   </body>
 </html>
