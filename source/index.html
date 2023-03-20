@@ -8,37 +8,41 @@
   </head>
   <body>
     <main class="main-container">
-      <section class="modal-container">
-        <div class="modal">
-          <h3 class="modal-name">
+      <section class="comment">
+        <div class="comment__wrapper">
+          <h3 class="comment__title">
             Поле ввода комментариев
           </h3>
-          <form class="modal-form" action="https://echo.htmlacademy.ru/" method="get">
-            <div class="modal-structure modal-structure-income">
-              <label class="modal-label modal-label-text" for="modal-income">
+          <form class="comment__form" action="" method="push">
+            <div class="comment__input-wrapper">
+              <label class="comment__input-label" for="modal-income">
                 Дата заезда:
               </label>
-              <div class="modal-valid-wrapper modal-invalid-wrapper">
-                <div class="modal-input-wrapper">
-                  <input class="modal-input-date" id="modal-income" type="text" name="date-income" value="27 апреля 2020" placeholder="Укажите дату" required>
-                  <button class="modal-button-date modal-button-date-income" type="button">
-                    <span class="visually-hidden">Выбрать дату заезда.</span>
-                  </button>
-                </div>
-                <span class="modal-input-error">Мы не можем отправить вас в прошлое.</span>
-              </div>
+              <input class="comment__input-text" id="comment-income" type="text" name="comment-text" value="" placeholder="Ваш комментарий" required>
+              <input class="comment__input-date" id="comment-income" type="date" name="comment-date" value="" placeholder="" required>
             </div>
-            <button class="modal-close-button" type="button">
-              <span class="visually-hidden">Закрыть.</span>
-            </button>
-            <button class="modal-button-search" type="submit">
-              <span class="modal-button-search-text">
-                Найти
+            <button class="comment__button-submit" type="submit">
+              <span class="comment__submit-text">
+                Отправить
               </span>
             </button>
           </form>
         </div>
+        <div class="comments">
+          <ul class="comments__list"></ul>
+        </div>
       </section>
     </main>
+    <template id="comments-template">
+      <li class="comments-item">
+        <div class="comment__inner">
+          <h2 class="comments__name"></h2>
+          <p class="comments__add-date"></p>
+          <p class="comments__text"></p>
+          <button type="button" class="comments__delete-button"></button>
+          <button type="button" class="comments__like-button"></button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>
