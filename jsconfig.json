@@ -1,0 +1,8 @@
+{
+"include": ["source/**/*"],
+"compilerOptions": {
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "checkJs": true
+}
+  }
