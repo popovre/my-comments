@@ -12,4 +12,8 @@
 
 // custom
 // blocks
-@import "./blocks/main-container"
+@import "./blocks/main-container";
+
+body {
+  background-color: tomato;
+}
