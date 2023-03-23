@@ -1,9 +1,9 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  entry: './source/js/main.js',
+  entry: './src/main.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'source' }],
+      patterns: [{ from: 'markup' }],
     }),
   ],
   module: {
