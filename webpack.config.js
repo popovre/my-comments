@@ -1,6 +1,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -14,6 +15,9 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: 'markup' }],
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
   ],
   module: {
     rules: [
@@ -23,9 +27,9 @@ module.exports = {
           use: ['babel-loader']
         },
         {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
-        }
+          test: /\.(scss|css)$/,
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        },
     ]
   },
   optimization: {
