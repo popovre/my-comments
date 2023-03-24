@@ -1,2 +1,2 @@
-// import '../build/sass/style.scss';
+import './sass/style.scss';
 console.log('hello world')
