@@ -12,6 +12,7 @@ module.exports = {
     clean: true,
   },
   devtool: 'source-map',
+  target: ['web', 'es5'],
   module: {
     rules: [
         {
@@ -46,6 +47,11 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
   ],
+  devServer: {
+    watchFiles: path.join(__dirname, 'build'),
+    hot: true,
+    port: 9000,
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({
