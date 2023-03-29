@@ -1,7 +1,7 @@
 // default //
 
 //global
-@import "fonts";
+// @import "../fonts/fonts";
 @import "reboot";
 
 //mixins
@@ -13,6 +13,10 @@
 // custom
 // blocks
 @import "./blocks/main-container";
+
+html {
+  font-family: 'Roboto';
+}
 
 body {
   background-color: red;

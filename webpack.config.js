@@ -12,25 +12,7 @@ module.exports = {
     clean: true,
   },
   devtool: 'source-map',
-  target: ['web', 'es5'],
-  module: {
-    rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules)/,
-          use: ['babel-loader']
-        },
-        {
-          test: /\.(scss|css)$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
-            'sass-loader',
-          ],
-        },
-    ]
-  },
+  // target: ['web', 'es5'],
   plugins: [
     new FileManagerPlugin({
       events: {
@@ -51,6 +33,28 @@ module.exports = {
     watchFiles: path.join(__dirname, 'build'),
     hot: true,
     port: 9000,
+  },
+  module: {
+    rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: ['babel-loader']
+        },
+        {
+          test: /\.(scss|css)$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
+          ],
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+        },
+    ]
   },
   optimization: {
     minimizer: [
