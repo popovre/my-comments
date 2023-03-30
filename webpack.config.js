@@ -12,7 +12,7 @@ module.exports = {
     clean: true,
   },
   devtool: 'source-map',
-  // target: ['web', 'es5'],
+  target: ['web', 'es5'],
   plugins: [
     new FileManagerPlugin({
       events: {
@@ -26,7 +26,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'style.css',
     }),
   ],
   devServer: {
@@ -36,24 +36,27 @@ module.exports = {
   },
   module: {
     rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules)/,
-          use: ['babel-loader']
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: path.join('fonts', '[name].[contenthash][ext]'),
         },
-        {
-          test: /\.(scss|css)$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
-            'sass-loader',
-          ],
-        },
-        {
-          test: /\.(woff2?|eot|ttf|otf)$/i,
-          type: 'asset/resource',
-        },
+      },
     ]
   },
   optimization: {

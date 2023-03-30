@@ -1,0 +1,27 @@
+// default //
+
+//global
+// @import "../fonts/fonts";
+@import "./sass/reboot";
+
+//mixins
+@import "./sass/mixins";
+
+//variables
+@import "./sass/variables";
+
+// custom
+// blocks
+@import "./sass/blocks/main-container";
+
+html {
+  font-family: 'Roboto';
+}
+
+body {
+  background-color: rgb(136, 0, 255);
+}
+
+.comment__wrapper {
+  font-family: 'Roboto';
+}
