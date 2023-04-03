@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
     clean: true,
   },
   devtool: 'source-map',
@@ -53,9 +54,6 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-        generator: {
-          filename: path.join('images', '[name].[contenthash][ext]'),
-        },
       },
       {
         test: /\.svg$/,
