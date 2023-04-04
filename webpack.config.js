@@ -9,22 +9,21 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
-    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
     clean: true,
   },
   devtool: 'source-map',
   target: ['web', 'es5'],
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html'),
+      filename: 'index.html',
+    }),
     new FileManagerPlugin({
       events: {
         onStart: {
           delete: ['dist'],
         },
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
-      filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
@@ -54,6 +53,9 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: path.join('images', '[name].[contenthash][ext]'),
+        },
       },
       {
         test: /\.svg$/,
