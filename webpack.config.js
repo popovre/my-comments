@@ -103,7 +103,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'main.[contenthash].js',
+    filename: 'bundle.[contenthash].js',
     assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   plugins: [
@@ -168,6 +168,9 @@ module.exports = {
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: path.join('fonts', '[name].[contenthash][ext]'),
+        },
       },
     ],
   },
