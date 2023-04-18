@@ -103,7 +103,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.[contenthash].js',
+    filename: 'main.[contenthash].js',
     assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   plugins: [
