@@ -1,7 +1,8 @@
 // default //
 
 //global
-// @import "../fonts/fonts";
+// @import "./sass/fonts";
+
 @import "./sass/reboot";
 
 //mixins
@@ -24,4 +25,9 @@ body {
 
 .comment__wrapper {
   font-family: 'Roboto';
+}
+
+.comment__input-label {
+  font-family: 'Prata';
+  font-size: 30px;
 }
