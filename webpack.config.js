@@ -9,7 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.[contenthash].js',
-    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,18 +20,10 @@ module.exports = {
         onStart: {
           delete: ['build'],
         },
-        // onEnd: {
-        //   copy: [
-        //     {
-        //       source: path.join('src', 'static'),
-        //       destination: 'dist',
-        //     },
-        //   ],
-        // },
       },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'style.[contenthash].css',
     }),
   ],
   devServer: {
@@ -62,19 +53,22 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: path.join('assets','images', '[name].[contenthash][ext]'),
+        },
       },
       {
         test: /\.svg$/,
         type: 'asset/resource',
         generator: {
-          filename: path.join('icons', '[name].[contenthash][ext]'),
+          filename: path.join('assets','icons', '[name].[contenthash][ext]'),
         },
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)$/i,
+        test: /\.(woff2?|woff|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: path.join('fonts', '[name].[contenthash][ext]'),
+          filename: path.join('assets','fonts', '[name].[contenthash][ext]'),
         },
       },
     ],
